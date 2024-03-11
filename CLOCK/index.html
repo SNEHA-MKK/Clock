@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="image/icon" href=""> -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div>
+        <h1 id="Clock"></h1>
+    </div>
+</body>
+
+<script>
+    //definition 
+    function getTime(){
+        const time = new Date()
+        console.log(time);
+        let hour = time.getHours()
+        console.log(hour);
+
+        let min =time.getMinutes()
+        console.log(min);
+
+        let sec=time.getSeconds()
+        console.log(sec);
+
+
+        Clock.innerHTML=`${hour} :${min} :${sec} ${hour>=12?'PM':'AM'}`
+
+
+        setTimeout(()=>getTime(),1000) // to change time in each second, 1000millisec
+    }
+ 
+    //call
+    getTime()
+</script>
+</html>
